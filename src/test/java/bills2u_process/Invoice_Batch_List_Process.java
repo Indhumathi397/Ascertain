@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class Invoice_Batch_List_Process extends Root_Class_TestNG {
 
@@ -1076,22 +1075,6 @@ public class Invoice_Batch_List_Process extends Root_Class_TestNG {
 
     }
 
-    public static boolean isFileDownloadedVerify(String downloadPath, String fileName) {
-        File dir = new File(downloadPath);
-        File[] dirContents = dir.listFiles();
-        System.out.println(downloadPath+"<<>>"+fileName+"<<>>");
-        for (int i = 0; i < Objects.requireNonNull(dirContents).length; i++) {
-            System.out.println(dirContents[i].getName());
-            if (dirContents[i].getName().contains(fileName)) {
-                System.out.println(dirContents[i].getName());
-                // File has been found, it can now be deleted:
-                dirContents[i].delete();
-                return true;
-            }
-        }
-        return false;
-    }
-
     private static String getFileNameWithoutExtension(File file) {
         String fileName = "";
 
@@ -1178,104 +1161,6 @@ public class Invoice_Batch_List_Process extends Root_Class_TestNG {
             test.fail(ex.getMessage());
             test.info("Here, the screenshot has been attached.\n", MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("Bills2U.screenshot.Directory") + "/clickOnExportButton.jpeg").build());
         }
-    }
-
-    public static void DownloadInvoiceBatchReport() throws IOException {
-        try {
-            Obj_Rep_InvoiceBatchList bList = new Obj_Rep_InvoiceBatchList();
-            PageFactory.initElements(driver, bList);
-            bList.btnExportInvoiceBatchList.click();
-            Thread.sleep(1000);
-            if (isFileDownloadedVerify(prop.getProperty("Bills2U.FileUpload.DownloadPath")
-                    , prop.getProperty("Bills2U.InvoiceBatch.ExportFileName"))) {
-                test.pass("Biller able to download all the details in Excel sheet in \"Invoice batch list page\"");
-            } else {
-                test.fail("Biller not able to download all the details in Excel sheet in \"Invoice batch list page\"");
-            }
-        } catch (Exception e) {
-            File screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            Files.copy(screen, new File(prop.getProperty("Bills2U.screenshot.Directory")+"/DownloadInvoiceBatchReport.jpeg"));
-            log.info(e.getMessage());
-            test.fail(e.getMessage());
-            test.info("Here, the screenshot has been attached.\n", MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("Bills2U.screenshot.Directory")+"/DownloadInvoiceBatchReport.jpeg").build());
-        }
-
-
-    }
-
-    public static void GoToEditInvoiceBatchList() throws IOException {
-        try {
-            Obj_Rep_InvoiceBatchList bList = new Obj_Rep_InvoiceBatchList();
-            PageFactory.initElements(driver, bList);
-            bList.goToEditInvoiceBatch.click();
-            Thread.sleep(1000);
-            if (bList.txtVerifyEditBatchInvoice.getText().contains(prop.getProperty("Bills2U.EditBatchList.BatchName.Filter"))) {
-                test.pass("Biller be able to navigate to the \"Invoice batch edit\" page");
-            } else {
-                test.fail("Biller not be able to navigate to the \"Invoice batch edit\" page");
-            }
-        } catch (Exception e) {
-            File screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            Files.copy(screen, new File(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchList.jpeg"));
-            log.info(e.getMessage());
-            test.fail(e.getMessage());
-            test.info("Here, the screenshot has been attached.\n", MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchList.jpeg").build());
-        }
-
-
-    }
-
-    public static void GoToEditInvoiceBatchPublishedList() throws IOException {
-        try {
-            Obj_Rep_InvoiceBatchList bList = new Obj_Rep_InvoiceBatchList();
-            PageFactory.initElements(driver, bList);
-            if (bList.txtVerifyPublishedEditBatchInvoice.getText().contains("PUBLISHED")) {
-                bList.goToEditInvoiceBatch.click();
-                Thread.sleep(1000);
-                if (bList.txtVerifyEditBatchInvoice.getText().contains(prop.getProperty("Bills2U.EditBatchList.BatchName.Filter"))) {
-                    test.pass("Biller be able to navigate to the \"Invoice batch edit\" page");
-                } else {
-                    test.fail("Biller not be able to navigate to the \"Invoice batch edit\" page");
-                }
-            } else {
-                test.fail("Biller Batch Status is not Published");
-            }
-
-        } catch (Exception e) {
-            File screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            Files.copy(screen, new File(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchPublishedList.jpeg"));
-            log.info(e.getMessage());
-            test.fail(e.getMessage());
-            test.info("Here, the screenshot has been attached.\n", MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchPublishedList.jpeg").build());
-        }
-
-
-    }
-
-    public static void GoToEditInvoiceBatchStoppedList() throws IOException {
-        try {
-            Obj_Rep_InvoiceBatchList bList = new Obj_Rep_InvoiceBatchList();
-            PageFactory.initElements(driver, bList);
-            if (bList.txtVerifyPublishedEditBatchInvoice.getText().contains("STOPPED")) {
-                bList.goToEditInvoiceBatch.click();
-                Thread.sleep(1000);
-                if (bList.txtVerifyEditBatchInvoice.getText().contains(prop.getProperty("Bills2U.EditBatchList.BatchName.Filter"))) {
-                    test.pass("Biller be able to navigate to the \"Invoice batch edit\" page");
-                } else {
-                    test.fail("Biller not be able to navigate to the \"Invoice batch edit\" page");
-                }
-            } else {
-                test.fail("Biller Batch Status is not Stooped");
-            }
-        } catch (Exception e) {
-            File screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            Files.copy(screen, new File(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchStoppedList.jpeg"));
-            log.info(e.getMessage());
-            test.fail(e.getMessage());
-            test.info("Here, the screenshot has been attached.\n", MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("Bills2U.screenshot.Directory")+"/GoToEditInvoiceBatchStoppedList.jpeg").build());
-        }
-
-        
     }
 
 

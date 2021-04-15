@@ -3,7 +3,6 @@ package bills2u_process;
 import config.PropertyClass;
 import bills2u_constant.*;
 import bills2u_root.Root_Class;
-import bills2u_root.Root_Class_Payers;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.google.common.io.Files;
 import com.opencsv.CSVReader;
@@ -20,7 +19,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class File_Upload_Process extends Root_Class {
@@ -1081,7 +1079,7 @@ public class File_Upload_Process extends Root_Class {
             wait.until(ExpectedConditions.visibilityOf(objInvoice.findTxtbox));
             if (objInvoice.findTxtbox.isDisplayed()) {
                 if (objInvoice.findTxtbox.isEnabled()) {
-                    if (!objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value"))) {
+                    if (objInvoice.findTxtbox.getAttribute("value") != null) {
                         objInvoice.findTxtbox.clear();
                     }
                     objInvoice.findTxtbox.sendKeys(prop.getProperty("Bills2u.EditRecipient.InvNumber"));
@@ -1127,7 +1125,7 @@ public class File_Upload_Process extends Root_Class {
             wait.until(ExpectedConditions.visibilityOf(objInvoice.findTxtbox));
             if (objInvoice.findTxtbox.isDisplayed()) {
                 if (objInvoice.findTxtbox.isEnabled()) {
-                    if (objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value").toString())) {
+                    if (objInvoice.findTxtbox.getAttribute("value")!=null) {
                         objInvoice.findTxtbox.clear();
                     }
                     objInvoice.findTxtbox.sendKeys(prop.getProperty("Bills2u.EditRecipient.Recipient"));
@@ -1173,7 +1171,7 @@ public class File_Upload_Process extends Root_Class {
             wait.until(ExpectedConditions.visibilityOf(objInvoice.findTxtbox));
             if (objInvoice.findTxtbox.isDisplayed()) {
                 if (objInvoice.findTxtbox.isEnabled()) {
-                    if (objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value").toString())) {
+                    if (objInvoice.findTxtbox.getAttribute("value")!=null) {
                         objInvoice.findTxtbox.clear();
                     }
                     objInvoice.findTxtbox.sendKeys(prop.getProperty("Bills2u.EditRecipient.Ref1"));
@@ -1218,7 +1216,7 @@ public class File_Upload_Process extends Root_Class {
             wait.until(ExpectedConditions.visibilityOf(objInvoice.findTxtbox));
             if (objInvoice.findTxtbox.isDisplayed()) {
                 if (objInvoice.findTxtbox.isEnabled()) {
-                    if (objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value").toString())) {
+                    if (objInvoice.findTxtbox.getAttribute("value")!=null) {
                         objInvoice.findTxtbox.clear();
                     }
                     objInvoice.findTxtbox.sendKeys(prop.getProperty("Bills2u.EditRecipient.InvAmt"));
@@ -1314,6 +1312,7 @@ public class File_Upload_Process extends Root_Class {
                         String fileName = getFileNameWithoutExtension(getLatestFile);
                         System.out.println("File Name :- " + fileName);
 
+                        assert getLatestFile != null;
                         if (getLatestFile.exists()) {
                             if (getLatestFile.getName().equals(fileName + ".csv")) {
                                 test.pass("Biller has able to download and view all the invoice listing details in Excel sheet ");
@@ -1559,7 +1558,7 @@ public class File_Upload_Process extends Root_Class {
             objInvoice.upwardArrow.click();
 
             System.out.println(objInvoice.getCellFromTable.size());
-            String strArry[] = new String[objInvoice.getCellFromTable.size()];
+            String[] strArry = new String[objInvoice.getCellFromTable.size()];
             for (int i = 0; i < objInvoice.getCellFromTable.size(); i++) {
                 strArry[i] = objInvoice.getCellFromTable.get(i).getText();
                 System.out.println(strArry[i]);
@@ -1605,7 +1604,7 @@ public class File_Upload_Process extends Root_Class {
             PageFactory.initElements(driver, objInvoice);
             objInvoice.upwardArrow.click();
             System.out.println(objInvoice.getCellFromTable.size());
-            String strArry[] = new String[objInvoice.getCellFromTable.size()];
+            String[] strArry = new String[objInvoice.getCellFromTable.size()];
             for (int i = 0; i < objInvoice.getCellFromTable.size(); i++) {
                 strArry[i] = objInvoice.getCellFromTable.get(i).getText();
                 System.out.println(strArry[i]);

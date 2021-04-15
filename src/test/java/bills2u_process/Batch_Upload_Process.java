@@ -104,7 +104,7 @@ public class Batch_Upload_Process extends Root_Class_TestNG {
         try {
             Obj_Rep_BatchUpload bUpload = new Obj_Rep_BatchUpload();
             PageFactory.initElements(driver, bUpload);
-            var id = (int) Math.floor(Math.random() * 50000);
+            int id = (int) Math.floor(Math.random() * 50000);
             BatchNameInput = "SELENUIM-RPM " + id;
             bUpload.iptBatchName.clear();
             bUpload.iptBatchName.sendKeys(BatchNameInput);

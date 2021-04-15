@@ -8,7 +8,6 @@ import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Reporter;
 
 import java.io.File;
 import java.io.IOException;
