@@ -155,7 +155,7 @@ public class File_Upload_Process extends Root_Class {
         }
     }
 
-    public static void clickOnInvoiceBatch() throws InterruptedException, IOException {
+    public static void clickOnInvoiceBatch() throws IOException {
         try {
             Obj_Rep_Home objHome = new Obj_Rep_Home();
             PageFactory.initElements(driver, objHome);
@@ -411,6 +411,7 @@ public class File_Upload_Process extends Root_Class {
                         File getLatestFile = getLatestFilefromDir(downloadPath);
                         String fileName = getFileNameWithoutExtension(getLatestFile);
                         System.out.println("File Name :- " + fileName);
+                        assert getLatestFile != null;
                         if (getLatestFile.exists()) {
                             test.pass("Biller has able to download the file and latest downloaded file name is '" + getLatestFile.getName() + "'.");
 
@@ -478,6 +479,7 @@ public class File_Upload_Process extends Root_Class {
             PageFactory.initElements(driver, objInvoice);
             String downloadPath = prop.getProperty("Bills2U.FileUpload.DownloadPath");
             File getLatestFile = getLatestFilefromDir(downloadPath);
+            assert getLatestFile != null;
             String fileName = getLatestFile.getName();
             System.out.println("File Name :- " + fileName);
             if (objInvoice.feedDataTypeSelect.getText().equals(prop.getProperty("Bills2U.FileUpload.FeedDataType"))) {
@@ -586,6 +588,7 @@ public class File_Upload_Process extends Root_Class {
             getTestData();
             String downloadPath = prop.getProperty("Bills2U.FileUpload.DownloadPath");
             File getLatestFile = getLatestFilefromDir(downloadPath);
+            assert getLatestFile != null;
             String fileName = getLatestFile.getName();
             System.out.println("File Name :- " + fileName);
             System.out.println(downloadPath + getLatestFile.getName());
@@ -677,7 +680,7 @@ public class File_Upload_Process extends Root_Class {
         }
     }
 
-    public static void checkInvoiceList() throws InterruptedException, IOException {
+    public static void checkInvoiceList() throws IOException {
         try {
             Obj_Rep_Invoice objInvoice = new Obj_Rep_Invoice();
             PageFactory.initElements(driver, objInvoice);
@@ -909,7 +912,7 @@ public class File_Upload_Process extends Root_Class {
         }
     }
 
-    public static void clickOnDeleteInRecipient() throws InterruptedException, IOException {
+    public static void clickOnDeleteInRecipient() throws IOException {
         try {
             getTestData();
             Obj_Rep_Invoice objInvoice = new Obj_Rep_Invoice();
@@ -1078,7 +1081,7 @@ public class File_Upload_Process extends Root_Class {
             wait.until(ExpectedConditions.visibilityOf(objInvoice.findTxtbox));
             if (objInvoice.findTxtbox.isDisplayed()) {
                 if (objInvoice.findTxtbox.isEnabled()) {
-                    if (objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value").toString())) {
+                    if (!objInvoice.findTxtbox.getAttribute("value").equals(objInvoice.findTxtbox.getAttribute("value"))) {
                         objInvoice.findTxtbox.clear();
                     }
                     objInvoice.findTxtbox.sendKeys(prop.getProperty("Bills2u.EditRecipient.InvNumber"));
@@ -1596,7 +1599,7 @@ public class File_Upload_Process extends Root_Class {
         }
     }
 
-    public static void downwardAero() throws InterruptedException, IOException {
+    public static void downwardAero() throws IOException {
         try {
             Obj_Rep_Invoice objInvoice = new Obj_Rep_Invoice();
             PageFactory.initElements(driver, objInvoice);

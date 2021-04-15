@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class File_Upload_Page extends File_Upload_Process {
     
-    public File_Upload_Page TC_FU_001() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_001() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC1"));
         loginProcess();
@@ -23,7 +23,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_002() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_002() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC2"));
         loginProcess();
@@ -42,7 +42,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_003() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_003() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC3"));
         loginProcess();
@@ -60,7 +60,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_004() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_004() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC4"));
         loginProcess();
@@ -77,7 +77,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_005() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_005() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC5"));
         loginProcess();
@@ -97,7 +97,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_006() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_006() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC6"));
         loginProcess();
@@ -114,8 +114,27 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_007() throws InterruptedException, IOException {
-        
+    public File_Upload_Page TC_FU_008() throws IOException {
+
+        test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC8"));
+        loginProcess();
+        clickOnInvoiceMenuProcess();
+        clickOnInvoiceBatch();
+        placeTheCursorOnBatchUpload();
+        clickOnBatchUpload();
+        editExcelFile();
+        uploadFile();
+        checkInvoiceList();
+        clickOnEditRecipient();
+        enterPhoneInColumnFilter();
+        enterEmptySpaceInPhone();
+        closeRecipient();
+        logoutProcess();
+        return this;
+    }
+
+    public File_Upload_Page TC_FU_007() throws IOException {
+
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC7"));
         loginProcess();
         clickOnInvoiceMenuProcess();
@@ -134,26 +153,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_008() throws InterruptedException, IOException {
-        
-        test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC8"));
-        loginProcess();
-        clickOnInvoiceMenuProcess();
-        clickOnInvoiceBatch();
-        placeTheCursorOnBatchUpload();
-        clickOnBatchUpload();
-        editExcelFile();
-        uploadFile();
-        checkInvoiceList();
-        clickOnEditRecipient();
-        enterPhoneInColumnFilter();
-        enterEmptySpaceInPhone();
-        closeRecipient();
-        logoutProcess();
-        return this;
-    }
-
-    public File_Upload_Page TC_FU_009() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_009() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC9"));
         loginProcess();
@@ -173,7 +173,7 @@ public class File_Upload_Page extends File_Upload_Process {
         return this;
     }
 
-    public File_Upload_Page TC_FU_010() throws InterruptedException, IOException {
+    public File_Upload_Page TC_FU_010() throws IOException {
         
         test = report.createTest(prop.getProperty("Bills2U.FileUpload.TC10"));
         loginProcess();

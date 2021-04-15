@@ -39,7 +39,7 @@ public class Invoice_Listing_Page extends Invoice_Listing_Process {
         return this;
     }
 
-    public Invoice_Listing_Page TC_IL_003() throws ParseException, IOException {
+    public Invoice_Listing_Page TC_IL_003() throws IOException {
         getTestData();
         test=report.createTest(prop.getProperty("Bills2U.InvoiceListing.TC3"));
         loginProcess();
@@ -60,7 +60,7 @@ public class Invoice_Listing_Page extends Invoice_Listing_Process {
         logoutProcess();
         return this;
     }
-    public Invoice_Listing_Page TC_IL_005() throws InterruptedException, IOException {
+    public Invoice_Listing_Page TC_IL_005() throws IOException {
         getTestData();
         test=report.createTest(prop.getProperty("Bills2U.InvoiceListing.TC5"));
         loginProcess();
@@ -171,7 +171,7 @@ public class Invoice_Listing_Page extends Invoice_Listing_Process {
         return this;
     }
 
-    public Invoice_Listing_Page TC_IL_015() throws InterruptedException, IOException {
+    public Invoice_Listing_Page TC_IL_015() throws IOException {
         getTestData();
         test=report.createTest(prop.getProperty("Bills2U.InvoiceListing.TC15"));
         loginProcess();
