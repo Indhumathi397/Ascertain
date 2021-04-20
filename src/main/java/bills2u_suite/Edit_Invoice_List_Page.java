@@ -1,8 +1,6 @@
 package bills2u_suite;
 
-import config.PropertyClass;
 import bills2u_process.Edit_Invoice_List_Process;
-import bills2u_process.ProcessClass;
 
 import java.io.IOException;
 

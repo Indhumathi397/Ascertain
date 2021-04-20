@@ -1,17 +1,8 @@
 package bills2u_suite;
 
-import config.PropertyClass;
 import bills2u_process.Invoice_Listing_Process;
-import bills2u_process.ProcessClass;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
 
 public class Invoice_Listing_Page extends Invoice_Listing_Process {
 

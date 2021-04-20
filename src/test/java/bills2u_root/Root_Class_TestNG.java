@@ -48,7 +48,7 @@ public class Root_Class_TestNG {
     public static Properties prop = null;
     public static StopWatch watch = new StopWatch();
 @Test
-    public void DashboardTest() throws IOException {
+    public void DashboardTest() throws IOException, InterruptedException {
     new Dashboard_Page()
             .TC_Dash_001()
             .TC_Dash_002()

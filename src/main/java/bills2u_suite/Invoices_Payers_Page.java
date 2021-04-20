@@ -1,6 +1,5 @@
 package bills2u_suite;
 
-import bills2u_process.ProcessClass;
 import bills2u_process.Process_Class_Payer;
 
 public class Invoices_Payers_Page extends Process_Class_Payer {

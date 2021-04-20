@@ -192,7 +192,7 @@ public class Batch_Upload_Process extends Root_Class {
         try {
             Obj_Rep_BatchUpload bUpload = new Obj_Rep_BatchUpload();
             PageFactory.initElements(driver, bUpload);
-            var id = (int) Math.floor(Math.random() * 50000);
+            int id = (int) Math.floor(Math.random() * 50000);
             BatchNameInput = "SELENUIM-RPM " + id;
             bUpload.iptBatchName.clear();
             bUpload.iptBatchName.sendKeys(BatchNameInput);
@@ -307,6 +307,7 @@ public class Batch_Upload_Process extends Root_Class {
                         File getLatestFile = getLatestFilefromDir(downloadPath);
                         String fileName = getFileNameWithoutExtension(getLatestFile);
                         System.out.println("File Name :- " + fileName);
+                        assert getLatestFile != null;
                         if (getLatestFile.exists()) {
                             test.pass("Biller has able to download the file and latest downloaded file name is '" + getLatestFile.getName() + "'.");
 
@@ -374,6 +375,7 @@ public class Batch_Upload_Process extends Root_Class {
             PageFactory.initElements(driver, objInvoice);
             String downloadPath = prop.getProperty("Bills2U.FileUpload.DownloadPath");
             File getLatestFile = getLatestFilefromDir(downloadPath);
+            assert getLatestFile != null;
             String fileName = getLatestFile.getName();
             System.out.println("File Name :- " + fileName);
             if (objInvoice.feedDataTypeSelect.getText().equals(prop.getProperty("Bills2U.FileUpload.FeedDataType"))) {
@@ -443,6 +445,7 @@ public class Batch_Upload_Process extends Root_Class {
             getTestData();
             String downloadPath = prop.getProperty("Bills2U.FileUpload.DownloadPath");
             File getLatestFile = getLatestFilefromDir(downloadPath);
+            assert getLatestFile != null;
             String fileName = getLatestFile.getName();
             System.out.println("File Name :- " + fileName);
             System.out.println(downloadPath + getLatestFile.getName());

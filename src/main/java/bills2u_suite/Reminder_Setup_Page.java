@@ -1,7 +1,5 @@
 package bills2u_suite;
 
-import config.PropertyClass;
-import bills2u_process.ProcessClass;
 import bills2u_process.Reminder_Setup_Process;
 
 import java.io.IOException;
