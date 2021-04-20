@@ -18,7 +18,7 @@ public class PropertyClass {
         Properties prop = null;
         try {
             prop = new Properties();
-            fileName=new File("\\src\\main\\resources\\PROPERTY FILE\\Bills2U.Data.properties");
+            fileName=new File("Bills2U.Data.properties");
             fis = new FileInputStream(fileName);
 
             // create Properties class object
