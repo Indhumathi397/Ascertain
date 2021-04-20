@@ -1748,3 +1748,55 @@ Session ID: 6f6e07724945cde882bbb4184be9692c
 2021-04-15 11:06:59,897 INFO  [Root_Class_TestNG] Quiting the browser 
 2021-04-15 11:07:00,554 INFO  [Root_Class_TestNG] Browser has closed 
 2021-04-15 11:20:23,730 INFO  [Root_Class_TestNG] Opening Chrome browser 
+2021-04-20 12:07:52,749 INFO  [Root_Class_TestNG] Opening Chrome browser 
+2021-04-20 12:07:55,183 INFO  [Root_Class_TestNG] Chrome browser has launched 
+2021-04-20 12:07:55,183 INFO  [Root_Class_TestNG] Navigating to Billers portal 
+2021-04-20 12:07:59,684 INFO  [Root_Class_TestNG] Billers portal has launched 
+2021-04-20 12:07:59,685 INFO  [Root_Class_TestNG] Waiting till the Page is load 
+2021-04-20 12:07:59,700 INFO  [Root_Class_TestNG] Browser has waited till the page is load 
+2021-04-20 12:07:59,700 INFO  [Root_Class_TestNG] Maximizing window 
+2021-04-20 12:07:59,840 INFO  [Root_Class_TestNG] Window has maximized 
+2021-04-20 12:07:59,916 INFO  [Root_Class_TestNG] Waiting till the 'Login Now' button is display 
+2021-04-20 12:07:59,975 INFO  [Root_Class_TestNG] Waiting till the 'Login Now' button is click 
+2021-04-20 12:08:00,057 INFO  [Root_Class_TestNG] Clicking on the 'Login now' button 
+2021-04-20 12:08:02,283 INFO  [Root_Class_TestNG] Login Now has clicked 
+2021-04-20 12:08:02,294 INFO  [Root_Class_TestNG] Waiting till the Username text box is display 
+2021-04-20 12:08:02,338 INFO  [Root_Class_TestNG] Entering username 
+2021-04-20 12:08:02,400 INFO  [Root_Class_TestNG] Username has entered. 
+2021-04-20 12:08:02,400 INFO  [Root_Class_TestNG] Waiting till the 'Password' is display 
+2021-04-20 12:08:02,430 INFO  [Root_Class_TestNG] Entering password 
+2021-04-20 12:08:02,563 INFO  [Root_Class_TestNG] Password has entered 
+2021-04-20 12:08:02,563 INFO  [Root_Class_TestNG] Waiting till the 'Login' button is display 
+2021-04-20 12:08:02,618 INFO  [Root_Class_TestNG] Waiting till the 'Login' button is click 
+2021-04-20 12:08:02,691 INFO  [Root_Class_TestNG] Clicking on the 'Login' button 
+2021-04-20 12:08:03,465 INFO  [Root_Class_TestNG] 'Login' button has clicked 
+2021-04-20 12:08:03,465 INFO  [Root_Class_TestNG] Waiting till the 'Setup' menu is display 
+2021-04-20 12:08:04,639 INFO  [Root_Class_TestNG] Waiting till the 'Invoice' menu is display 
+2021-04-20 12:08:04,731 INFO  [Root_Class_TestNG] Biller has able to view the Biller home Page. 
+2021-04-20 12:08:04,731 INFO  [Root_Class_TestNG] Waiting till the Page is loading 
+2021-04-20 12:08:42,071 INFO  [Root_Class_TestNG] Waiting till the Person Icon is display 
+2021-04-20 12:08:42,166 INFO  [Root_Class_TestNG] Waiting till the Person Icon is click 
+2021-04-20 12:08:42,210 INFO  [Root_Class_TestNG] Clicking on the Person Icon 
+2021-04-20 12:08:42,385 INFO  [Root_Class_TestNG] Person Icon has clicked 
+2021-04-20 12:08:42,385 INFO  [Root_Class_TestNG] Waiting till the Logout is display 
+2021-04-20 12:08:42,564 INFO  [Root_Class_TestNG] Waiting till the Logout is click 
+2021-04-20 12:08:42,669 INFO  [Root_Class_TestNG] Clicking on the Logout 
+2021-04-20 12:08:43,365 INFO  [Root_Class_TestNG] Logout has clicked 
+2021-04-20 12:08:48,378 INFO  [Root_Class_TestNG] Waiting till the 'Login Now' button is display 
+2021-04-20 12:08:48,417 INFO  [Root_Class_TestNG] Waiting till the 'Login Now' button is click 
+2021-04-20 12:08:48,484 INFO  [Root_Class_TestNG] Clicking on the 'Login now' button 
+2021-04-20 12:08:48,924 INFO  [Root_Class_TestNG] Login Now has clicked 
+2021-04-20 12:08:48,925 INFO  [Root_Class_TestNG] Waiting till the Username text box is display 
+2021-04-20 12:08:48,959 INFO  [Root_Class_TestNG] Entering username 
+2021-04-20 12:08:49,022 INFO  [Root_Class_TestNG] Username has entered. 
+2021-04-20 12:08:49,022 INFO  [Root_Class_TestNG] Waiting till the 'Password' is display 
+2021-04-20 12:08:49,051 INFO  [Root_Class_TestNG] Entering password 
+2021-04-20 12:08:49,120 INFO  [Root_Class_TestNG] Password has entered 
+2021-04-20 12:08:49,120 INFO  [Root_Class_TestNG] Waiting till the 'Login' button is display 
+2021-04-20 12:08:49,151 INFO  [Root_Class_TestNG] Waiting till the 'Login' button is click 
+2021-04-20 12:08:49,209 INFO  [Root_Class_TestNG] Clicking on the 'Login' button 
+2021-04-20 12:08:49,820 INFO  [Root_Class_TestNG] 'Login' button has clicked 
+2021-04-20 12:08:49,820 INFO  [Root_Class_TestNG] Waiting till the 'Setup' menu is display 
+2021-04-20 12:08:50,972 INFO  [Root_Class_TestNG] Waiting till the 'Invoice' menu is display 
+2021-04-20 12:08:51,064 INFO  [Root_Class_TestNG] Biller has able to view the Biller home Page. 
+2021-04-20 12:08:51,064 INFO  [Root_Class_TestNG] Waiting till the Page is loading 

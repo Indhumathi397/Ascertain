@@ -34,26 +34,23 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Root_Class_TestNG {
-
-
     public static WebDriver driver;
-
     public static Logger log = Logger.getLogger(Root_Class_TestNG.class.getName());
-
     public static ExtentReports report;
     public static ExtentTest test;
     public static ExtentHtmlReporter htmlReport;
     public static String Date;
-
     public static Properties prop = null;
     public static StopWatch watch = new StopWatch();
-@Test
+
+    @Test
     public void DashboardTest() throws IOException, InterruptedException {
     new Dashboard_Page()
             .TC_Dash_001()
             .TC_Dash_002()
             .TC_Dash_003();
-}
+    }
+
     @Test
     public void InvoiceBatchListTest() throws IOException {
         new Invoice_Batch_List_Page()
@@ -79,6 +76,7 @@ public class Root_Class_TestNG {
                 .TC_IBL_020()
                 .TC_IBL_021();
     }
+
     @Test
     public void BatchUploadTest() throws IOException {
         new Batch_upload_page()
@@ -87,6 +85,7 @@ public class Root_Class_TestNG {
                 .TC_BU_003()
                 .TC_BU_004();
     }
+
     @Test
     public void FileUploadTest() throws IOException {
         new File_Upload_Page()
@@ -101,6 +100,7 @@ public class Root_Class_TestNG {
                 .TC_FU_009()
                 .TC_FU_010();
     }
+
     @Test
     public void ReminderSetupTest() throws IOException {
         new Reminder_Setup_Page()
@@ -111,6 +111,7 @@ public class Root_Class_TestNG {
                 .TC_RS_005()
                 .TC_RS_006();
     }
+
     @Test
     public void BatchEntryTest() throws IOException {
         new Batch_Entry_Page()
@@ -120,6 +121,7 @@ public class Root_Class_TestNG {
                 .TC_BE_004()
                 .TC_BE_005();
     }
+
     @Test
     public void InvoiceDetailTest() throws IOException {
         new Invoice_Detail_Page()
@@ -143,6 +145,7 @@ public class Root_Class_TestNG {
                 .TC_ID_018()
                 .TC_ID_019();
     }
+
     @Test
     public void InvoiceListingTest() throws IOException {
         new Invoice_Listing_Page()
@@ -164,6 +167,7 @@ public class Root_Class_TestNG {
                 .TC_IL_016()
                 .TC_IL_017();
     }
+
     @Test
     public void EditInvoiceListTest() throws IOException {
         new Edit_Invoice_List_Page()
@@ -172,6 +176,7 @@ public class Root_Class_TestNG {
                 .TC_EIL_003()
                 .TC_EIL_004();
     }
+
     @Test
     public void PaymentListingPageTest() throws IOException {
         new Payment_Listing_Page()
@@ -197,6 +202,7 @@ public class Root_Class_TestNG {
                 .TC_PL_020()
                 .TC_PL_021();
     }
+
     @Test
     public void MerchantOnBoardTest() throws IOException {
         new Merchant_On_Board_Page()
@@ -209,14 +215,11 @@ public class Root_Class_TestNG {
                 .TC_MOB_007()
                 .TC_MOB_008()
                 .TC_MOB_009();
-
     }
-
-
 
     @BeforeTest
     public void initProcess() throws IOException {
-        DOMConfigurator.configure("D:\\Bills2U_Automation\\Bills2U_Automation\\src\\test\\java\\log4j.xml");
+        DOMConfigurator.configure("log4j.xml");
         watch.start();
 
         getTestData();
@@ -269,7 +272,7 @@ public class Root_Class_TestNG {
     }
 
     @AfterTest
-    public static void exitProcess() {
+    public void exitProcess() {
         log.info("Quiting the browser");
         try {
             if (driver != null) {

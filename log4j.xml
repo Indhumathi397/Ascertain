@@ -10,8 +10,8 @@
 
         <param name="Threshold" value="INFO"/>
 
-        <param name="File" value="D:/RinggitPay/Bills2U/LOGS/logfile.log"/>
-
+        <param name="File" value="src/main/resources/LOGS/logfile.log"/>
+        <param name="File" value="src/test/resources/LOGS/logfile.log"/>
         <layout class="org.apache.log4j.PatternLayout">
 
             <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n"/>
