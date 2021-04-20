@@ -13,30 +13,25 @@ public class PropertyClass {
     public static Properties properties = new Properties();
 
     public Properties readPropertiesFile() throws IOException {
-        File fileName=null;
+        File fileName;
         FileInputStream fis = null;
         Properties prop = null;
         try {
             prop = new Properties();
-            fileName=new File("D:\\RinggitPay\\Bills2U\\PROPERTY FILE\\Bills2U.Data.properties");
+            fileName=new File("\\src\\main\\resources\\PROPERTY FILE\\Bills2U.Data.properties");
             fis = new FileInputStream(fileName);
 
             // create Properties class object
-            if (fis != null) {
-                // load properties file into it
-                prop.load(fis);
-            } else {
-                throw new FileNotFoundException("property file '" + fileName + "' not found in the classpath");
-            }
+            // load properties file into it
+            prop.load(fis);
 
-        } catch (FileNotFoundException e) {
-
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
 
             e.printStackTrace();
         } finally {
-            fis.close();
+            if(fis!=null) {
+                fis.close();
+            }
         }
 
         return prop;

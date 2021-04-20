@@ -14,16 +14,12 @@ public class PropertyClass {
         Properties prop = null;
         try {
             prop = new Properties();
-            fileName=new File("D:\\Bills2U_Automation\\Bills2U_Automation\\src\\main\\resources\\PROPERTY FILE\\Bills2U.Data.properties");
+            fileName=new File("\\src\\test\\resources\\PROPERTY FILE\\Bills2U.Data.properties");
             fis = new FileInputStream(fileName);
 
             // create Properties class object
-            if (fis != null) {
-                // load properties file into it
-                prop.load(fis);
-            } else {
-                throw new FileNotFoundException("property file '" + fileName + "' not found in the classpath");
-            }
+            // load properties file into it
+            prop.load(fis);
 
         } catch (Exception e) {
 
